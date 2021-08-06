@@ -46,7 +46,7 @@ function changeDisplay(btnClk) {
   if (clickCounter() >= 20) {
     return;
   }
-  if (reset === 1 || (parseFloat(primaryDisplay.textContent)) === 0) {
+  if (reset === 1) {
     primaryDisplay.textContent = btnClk;
     reset = 0;
   } else {
@@ -56,8 +56,11 @@ function changeDisplay(btnClk) {
 }
 
 function clearDisplay() {
-  primaryDisplay.textContent = 0;
-  secondaryDisplay.textContent = 0;
+  primaryDisplay.textContent = '';
+  secondaryDisplay.textContent = '';
+  resetClicks();
+  resetDecimal()
+
 }
 
 function backspaceDisplay() {
@@ -129,17 +132,17 @@ function showResult() {
 }
 
 function addition(a, b) {
-  return (parseFloat(a) + parseFloat(b)).toPrecision(4);
+  return (parseFloat(a) + parseFloat(b));
 }
 
 function subtraction(a, b) {
-  return (parseFloat(a) - parseFloat(b)).toPrecision(4);
+  return (parseFloat(a) - parseFloat(b));
 }
 
 function multiplication(a, b) {
-  return (parseFloat(a) * parseFloat(b)).toPrecision(4);
+  return (parseFloat(a) * parseFloat(b));
 }
 
 function division(a, b) {
-  return (parseFloat(b) / parseFloat(a)).toPrecision(4);
+  return (parseFloat(b) / parseFloat(a));
 }
